@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberSec Simplified - Make Cybersecurity Easy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">🔒</span>
+                <h1>CyberSec Simplified</h1>
+            </div>
+            <p class="tagline">Making cybersecurity easy to understand for everyone</p>
+        </header>
+
+        <!-- Search Section -->
+        <section class="search-section">
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Search for terms like 'firewall', 'encryption', 'phishing'..."
+                    autocomplete="off"
+                >
+                <button id="searchBtn" class="search-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    Search
+                </button>
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="protocols">Protocols</button>
+                <button class="filter-btn" data-category="attacks">Attacks</button>
+                <button class="filter-btn" data-category="defense">Defense</button>
+                <button class="filter-btn" data-category="concepts">Concepts</button>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Results Grid -->
+            <div id="resultsGrid" class="results-grid">
+                <!-- Cards will be dynamically inserted here -->
+            </div>
+
+            <!-- No Results Message -->
+            <div id="noResults" class="no-results" style="display: none;">
+                <div class="no-results-icon">🔍</div>
+                <h3>No terms found</h3>
+                <p>Try searching with different keywords or browse all terms</p>
+            </div>
+        </main>
+
+        <!-- Modal for Detailed View -->
+        <div id="termModal" class="modal">
+            <div class="modal-content">
+                <button class="modal-close">&times;</button>
+                <div class="modal-header">
+                    <span id="modalCategory" class="modal-category"></span>
+                    <h2 id="modalTitle"></h2>
+                </div>
+                <div class="modal-body">
+                    <div class="simple-explanation">
+                        <h3>📖 Simple Explanation</h3>
+                        <p id="modalSimple"></p>
+                    </div>
+                    <div class="analogy">
+                        <h3>💡 Real-World Analogy</h3>
+                        <p id="modalAnalogy"></p>
+                    </div>
+                    <div class="technical-details">
+                        <h3>⚙️ Technical Details</h3>
+                        <p id="modalTechnical"></p>
+                    </div>
+                    <div class="example">
+                        <h3>🎯 Example</h3>
+                        <p id="modalExample"></p>
+                    </div>
+                    <div class="key-points">
+                        <h3>🔑 Key Points</h3>
+                        <ul id="modalKeyPoints"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Built to make cybersecurity accessible to everyone 🔐</p>
+            <p class="footer-note">Click on any card to learn more about the term</p>
+        </footer>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
